@@ -64,10 +64,20 @@ public class Library {
             case 2: {
                 System.out.print("please input the number about book:");
                 int bookId = getChoiceIndex();
-                String message = "Thank you! Enjoy the book!";
+                String message = checkBooksById(bookId) ? "Thank you! Enjoy the book!" : "That book is not available.";
                 System.out.println(message);
                 break;
             }
         }
+    }
+
+    private boolean checkBooksById(int bookId) {
+        for(Book book:bookList)
+        {
+            if(book.getBookId() == bookId){
+                return book.getIsCheckout();
+            }
+        }
+        return false;
     }
 }
