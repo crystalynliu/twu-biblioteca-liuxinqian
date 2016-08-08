@@ -8,7 +8,7 @@ public class Menu {
     private int menuId;
     private String menuName;
 
-    private static String invalidMenuMessage = "Select a valid option!";
+    public static String invalidMenuMessage = "Select a valid option!";
 
     public Menu(int menuId,String menuName){
         this.menuId = menuId;

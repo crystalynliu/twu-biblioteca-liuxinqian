@@ -60,7 +60,7 @@ public class handleBookTest {
 
     @Test
     public void print_Menu_list_when_choice_option() {
-        library.showMenuList(menus);
+        library.showMenuList();
         String expectation = "======= Menu List =======\n"
                 + "1 -- LIST BOOKS\n" + "2 -- CHOCK OUT BOOK\n"
                 + "3 -- RETURN BOOK\n" + "4 -- QUIT\n"

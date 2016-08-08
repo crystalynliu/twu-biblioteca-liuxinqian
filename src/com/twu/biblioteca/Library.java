@@ -44,10 +44,10 @@ public class Library {
         }
     }
 
-    public void showMenuList(List<Menu> menus) {
+    public void showMenuList() {
         System.out.println("======= Menu List =======");
-        for(int i = 0; i < menus.size(); i++ ){
-            Menu menu = menus.get(i);
+        for(int i = 0; i < menuList.size(); i++ ){
+            Menu menu = menuList.get(i);
             System.out.println(menu.getMenuId() + " -- " + menu.getMenuName());
         }
         System.out.print("Select on Option about Menu:");
@@ -56,7 +56,7 @@ public class Library {
     public void choiceMenu() throws IOException {
         int choiceIndex;
         do{
-            showMenuList(menuList);
+            showMenuList();
             choiceIndex = getChoiceIndex();
         }while (choiceIndex != 4);
         System.out.println("You have Quit the Library!");
