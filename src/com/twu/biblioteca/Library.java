@@ -30,4 +30,7 @@ public class Library {
         }
         System.out.print("Select on Option about Menu:");
     }
+
+    public void choiceMenu() {
+    }
 }
