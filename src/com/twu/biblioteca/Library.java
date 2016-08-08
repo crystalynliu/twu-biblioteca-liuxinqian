@@ -21,4 +21,7 @@ public class Library {
                     + "published:" + currentBook.getYearPublished());
         }
     }
+
+    public void showMenuList(List<Menu> menus) {
+    }
 }
