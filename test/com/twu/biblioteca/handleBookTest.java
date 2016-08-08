@@ -57,7 +57,7 @@ public class handleBookTest {
         String expectation = "======= Menu List =======\n"
                 + "1 -- LIST BOOKS\n" + "2 -- CHOCK OUT BOOK\n"
                 + "3 -- RETURN BOOK\n" + "4 -- QUIT\n"
-                + "Select an Option about Menu:";
+                + "Select on Option about Menu:";
         assertEquals(expectation, outContent.toString());
     }
 }

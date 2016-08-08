@@ -23,5 +23,11 @@ public class Library {
     }
 
     public void showMenuList(List<Menu> menus) {
+        System.out.println("======= Menu List =======");
+        for(int i = 0; i < menus.size(); i++ ){
+            Menu menu = menus.get(i);
+            System.out.println(menu.getMenuId() + " -- " + menu.getMenuName());
+        }
+        System.out.print("Select on Option about Menu:");
     }
 }
