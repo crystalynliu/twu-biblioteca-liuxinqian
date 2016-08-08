@@ -10,6 +10,7 @@ import java.util.List;
 
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -95,6 +96,12 @@ public class handleBookTest {
         assertThat(outContent.toString(), containsString("Book List"));
     }
 
-
+    @Test
+    public void select_option_when_input_menu_index_two_that_book_available() throws IOException {
+        when(mockBufferedReader.readLine()).thenReturn("2");
+        library.selectOptionFromIndex(2);
+        String expectation = "please input the number about book:"+ "Thank you! Enjoy the book!";
+        assertThat(outContent.toString(), is(expectation));
+    }
 
 }
