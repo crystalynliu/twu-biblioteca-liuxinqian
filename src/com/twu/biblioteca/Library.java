@@ -1,5 +1,8 @@
 package com.twu.biblioteca;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,6 +34,19 @@ public class Library {
         System.out.print("Select on Option about Menu:");
     }
 
-    public void choiceMenu() {
+    public void choiceMenu() throws IOException {
+        int choiceIndex;
+        do{
+            showMenuList(menuList);
+            choiceIndex = getChoiceIndex();
+        }while (choiceIndex != 4);
+        System.out.println("You have Quit the Library!");
+    }
+
+    public int getChoiceIndex() throws IOException {
+        InputStreamReader inputData = new InputStreamReader(System.in);
+        BufferedReader bufferedReader= new BufferedReader(inputData);
+        String choiceIndex = bufferedReader.readLine();
+        return Integer.parseInt(choiceIndex);
     }
 }
