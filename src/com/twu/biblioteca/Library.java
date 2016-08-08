@@ -10,6 +10,13 @@ public class Library {
     private List<Book> bookList = Book.initialBookList();
     private List<Menu> menuList = Menu.InitialMenuList();
 
+    private InputStreamReader input = new InputStreamReader(System.in);
+    private BufferedReader bufferedReader = new BufferedReader(input);
+
+    public Library(BufferedReader bufferedReader){
+        this.bufferedReader = bufferedReader;
+    }
+
 
     public static void printWelcomeMessage() {
         System.out.println("Welcome to The Bangalore Public Library, Enjoy you journey!");
@@ -34,19 +41,8 @@ public class Library {
         System.out.print("Select on Option about Menu:");
     }
 
-    public void choiceMenu() throws IOException {
-        int choiceIndex;
-        do{
-            showMenuList(menuList);
-            choiceIndex = getChoiceIndex();
-        }while (choiceIndex != 4);
-        System.out.println("You have Quit the Library!");
+    public void choiceMenu() {
+
     }
 
-    public int getChoiceIndex() throws IOException {
-        InputStreamReader inputData = new InputStreamReader(System.in);
-        BufferedReader bufferedReader= new BufferedReader(inputData);
-        String choiceIndex = bufferedReader.readLine();
-        return Integer.parseInt(choiceIndex);
-    }
 }
