@@ -1,10 +1,14 @@
 package com.twu.biblioteca;
 
+import java.util.List;
+
 public class Book {
     private int bookId;
     private String bookName;
     private String author;
     private String yearPublished;
+
+    public Book(){}
 
     public Book(int bookId, String bookName, String author, String yearPublished){
         this.bookId = bookId;
@@ -41,7 +45,6 @@ public class Book {
         return this.yearPublished;
     }
 
-    public void setYearPublished(String yearPublished){
-        this.yearPublished = yearPublished;
+    public void printBookList() {
     }
 }
