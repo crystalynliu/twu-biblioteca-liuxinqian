@@ -31,13 +31,16 @@ public class Library {
         System.out.println("Welcome to The Bangalore Public Library, Enjoy you journey!");
     }
 
-    public void printBookList(List<Book> bookList) {
+    public void printBookList() {
+        System.out.println("======= Book List =======");
         for(int i = 0; i < bookList.size(); i++){
             Book currentBook = bookList.get(i);
-            System.out.println(currentBook.getBookId() + " | "
-                    + "name:" + currentBook.getBookName() + " | "
-                    + "author:" + currentBook.getAuthor() + " | "
-                    + "published:" + currentBook.getYearPublished());
+            if(currentBook.getIsCheckout()) {
+                System.out.println(currentBook.getBookId() + " | "
+                        + "name:" + currentBook.getBookName() + " | "
+                        + "author:" + currentBook.getAuthor() + " | "
+                        + "published:" + currentBook.getYearPublished());
+            }
         }
     }
 
@@ -68,7 +71,7 @@ public class Library {
         switch (index){
             case 1: {
                 System.out.println("======= Book List =======");
-                printBookList(bookList);
+                printBookList();
                 break;
             }
             case 2: {

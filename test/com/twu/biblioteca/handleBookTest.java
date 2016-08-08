@@ -28,6 +28,7 @@ public class handleBookTest {
         System.setOut(new PrintStream(outContent));
         books.add(new Book(1, "Harry Potter and the Sorcerer's Stone", "Rowling", "1997"));
         books.add(new Book(2, "Charlie and the Chocolate Factory", "Dahl", "1964"));
+        library.setBookList(books);
 
         menus.add(new Menu(1, "LIST BOOKS"));
         menus.add(new Menu(2, "CHOCK OUT BOOK"));
@@ -50,8 +51,8 @@ public class handleBookTest {
 
     @Test
     public void print_book_list_that_book_is_available() {
-        books.get(0).setCheckOut(false);
-        library.printBookList(books);
+        library.getBookList().get(0).setIsCheckOut(false);
+        library.printBookList();
         String expectation = "======= Book List =======\n"
                 + "2 | name:Charlie and the Chocolate Factory | author:Dahl | published:1964\n";
         assertEquals(expectation, outContent.toString());
@@ -116,8 +117,7 @@ public class handleBookTest {
     @Test
     public void select_option_when_input_menu_index_two_that_book_isAvailable() throws IOException {
         when(mockBufferedReader.readLine()).thenReturn("1");
-        books.get(0).setCheckOut(false);
-        library.setBookList(books);
+        library.getBookList().get(0).setIsCheckOut(false);
         library.selectOptionFromIndex(2);
         String expectation = "please input the number about book:"+ "That book is not available.\n";
         assertThat(outContent.toString(), is(expectation));

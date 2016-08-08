@@ -54,7 +54,7 @@ public class Book {
         return this.isCheckOut;
     }
 
-    public void setCheckOut(Boolean isCheckOut){
+    public void setIsCheckOut(Boolean isCheckOut){
         this.isCheckOut = isCheckOut;
     }
 
