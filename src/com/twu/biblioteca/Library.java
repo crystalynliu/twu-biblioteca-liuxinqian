@@ -12,17 +12,17 @@ public class Library {
     private InputStreamReader input = new InputStreamReader(System.in);
     private BufferedReader bufferedReader = new BufferedReader(input);
 
-    public Library(BufferedReader bufferedReader){
+    public Library(BufferedReader bufferedReader) {
         this.bufferedReader = bufferedReader;
         this.bookList = Book.initialBookList();
         this.menuList = Menu.InitialMenuList();
     }
 
-    public List<Book> getBookList(){
+    public List<Book> getBookList() {
         return bookList;
     }
 
-    public void setBookList(List<Book> bookList){
+    public void setBookList(List<Book> bookList) {
         this.bookList = bookList;
     }
 
@@ -33,9 +33,9 @@ public class Library {
 
     public void printBookList() {
         System.out.println("======= Book List =======");
-        for(int i = 0; i < bookList.size(); i++){
+        for (int i = 0; i < bookList.size(); i++) {
             Book currentBook = bookList.get(i);
-            if(currentBook.getIsCheckout()) {
+            if (currentBook.getIsCheckout()) {
                 System.out.println(currentBook.getBookId() + " | "
                         + "name:" + currentBook.getBookName() + " | "
                         + "author:" + currentBook.getAuthor() + " | "
@@ -46,7 +46,7 @@ public class Library {
 
     public void showMenuList() {
         System.out.println("======= Menu List =======");
-        for(int i = 0; i < menuList.size(); i++ ){
+        for (int i = 0; i < menuList.size(); i++) {
             Menu menu = menuList.get(i);
             System.out.println(menu.getMenuId() + " -- " + menu.getMenuName());
         }
@@ -55,10 +55,10 @@ public class Library {
 
     public void choiceMenu() throws IOException {
         int choiceIndex;
-        do{
+        do {
             showMenuList();
             choiceIndex = getChoiceIndex();
-        }while (choiceIndex != 4);
+        } while (choiceIndex != 4);
         System.out.println("You have Quit the Library!");
     }
 
@@ -68,27 +68,38 @@ public class Library {
     }
 
     public void selectOptionFromIndex(int index) throws IOException {
-        switch (index){
+        switch (index) {
             case 1: {
-                System.out.println("======= Book List =======");
                 printBookList();
                 break;
             }
             case 2: {
-                System.out.print("please input the number about book:");
-                int bookId = getChoiceIndex();
-                String message = checkBooksById(bookId) ? "Thank you! Enjoy the book!" : "That book is not available.";
-                System.out.println(message);
+                getBookStatue(true);
+                break;
+            }
+            case 3: {
+                getBookStatue(false);
                 break;
             }
         }
     }
 
-    private boolean checkBooksById(int bookId) {
-        for(Book book:bookList)
-        {
-            if(book.getBookId() == bookId){
-                return book.getIsCheckout();
+    private void getBookStatue(boolean isCheckout) throws IOException {
+        System.out.print("please input the number about book:");
+        int bookId = getChoiceIndex();
+        String message;
+        if (isCheckout) {
+            message = checkBooksById(bookId, isCheckout) ? "Thank you! Enjoy the book!" : "That book is not available.";
+        } else {
+            message = checkBooksById(bookId, isCheckout) ? "Thank you for returning the book." : "That is not a valid book to return.";
+        }
+        System.out.println(message);
+    }
+
+    private boolean checkBooksById(int bookId, boolean isCheckout) {
+        for (Book book : bookList) {
+            if (book.getBookId() == bookId) {
+                return isCheckout ? book.getIsCheckout() : !book.getIsCheckout();
             }
         }
         return false;

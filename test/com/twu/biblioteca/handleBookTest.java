@@ -148,4 +148,10 @@ public class handleBookTest {
         assertThat(outContent.toString(), is(expectation));
     }
 
+    @Test
+    public void select_option_when_input_menu_index_invalid() throws IOException {
+        library.selectOptionFromIndex(5);
+        assertThat(outContent.toString(), is("Error: Select a valid option!\n"));
+    }
+
 }
