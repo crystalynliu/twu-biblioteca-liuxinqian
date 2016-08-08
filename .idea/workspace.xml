@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="076c0e44-2099-4e98-b873-e4a491bbe15f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/Library.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/Library.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/handleBookTest.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/handleBookTest.java" />
     </list>
     <ignored path="biblioteca.iws" />
@@ -77,8 +76,8 @@
       <file leaf-file-name="handleBookTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/handleBookTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="102" column="97" selection-start-line="102" selection-start-column="97" selection-end-line="102" selection-end-column="97" />
+            <state relative-caret-position="207">
+              <caret line="110" column="98" selection-start-line="110" selection-start-column="98" selection-end-line="110" selection-end-column="98" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#734#740#0" expanded="true" />
@@ -795,14 +794,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1470582462055</updated>
-      <workItem from="1470582463386" duration="32823000" />
+      <workItem from="1470582463386" duration="32931000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="handleBookTest_(1) - 2016.08.08 at 22h 56m 58s.xml">
-      <configuration name="handleBookTest (1)" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="handleBookTest_(1) - 2016.08.08 at 22h 57m 46s.xml">
       <configuration name="handleBookTest (1)" configurationId="JUnit" />
     </history-entry>
@@ -830,9 +826,12 @@
     <history-entry file="handleBookTest_(1) - 2016.08.08 at 23h 47m 34s.xml">
       <configuration name="handleBookTest (1)" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="handleBookTest_(1) - 2016.08.08 at 23h 49m 20s.xml">
+      <configuration name="handleBookTest (1)" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32823000" />
+    <option name="totallyTimeSpent" value="32931000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="28" width="1440" height="814" extended-state="0" />
@@ -991,8 +990,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/handleBookTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="102" column="97" selection-start-line="102" selection-start-column="97" selection-end-line="102" selection-end-column="97" />
+        <state relative-caret-position="207">
+          <caret line="110" column="98" selection-start-line="110" selection-start-column="98" selection-end-line="110" selection-end-column="98" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#734#740#0" expanded="true" />

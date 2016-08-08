@@ -104,4 +104,12 @@ public class handleBookTest {
         assertThat(outContent.toString(), is(expectation));
     }
 
+    @Test
+    public void select_option_when_input_menu_index_two_that_book_isExist() throws IOException {
+        when(mockBufferedReader.readLine()).thenReturn("6");
+        library.selectOptionFromIndex(2);
+        String expectation = "please input the number about book:"+ "That book is not available.\n";
+        assertThat(outContent.toString(), is(expectation));
+    }
+
 }
