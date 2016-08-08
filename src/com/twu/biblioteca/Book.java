@@ -8,14 +8,14 @@ public class Book {
     private String bookName;
     private String author;
     private String yearPublished;
-
-    public Book(){}
+    private boolean isCheckOut ;
 
     public Book(int bookId, String bookName, String author, String yearPublished){
         this.bookId = bookId;
         this.bookName = bookName;
         this.author = author;
         this.yearPublished = yearPublished;
+        this.isCheckOut = true;
     }
 
     public int getBookId(){
@@ -46,6 +46,18 @@ public class Book {
         return this.yearPublished;
     }
 
+    public void setYearPublished(String yearPublished){
+        this.yearPublished = yearPublished;
+    }
+
+    public Boolean getIsCheckout(){
+        return this.isCheckOut;
+    }
+
+    public void setCheckOut(Boolean isCheckOut){
+        this.isCheckOut = isCheckOut;
+    }
+
     public static List<Book> initialBookList(){
         List<Book> bookList = new ArrayList<Book>();
         bookList.add(new Book(1,"Harry Potter and the Sorcerer's Stone","Rowling","1997"));
@@ -57,13 +69,4 @@ public class Book {
         return bookList;
     }
 
-    public void printBookList(List<Book> bookList) {
-        for(int i = 0; i < bookList.size(); i++){
-            Book currentBook = bookList.get(i);
-            System.out.println(currentBook.bookId + " | "
-                    + "name:" + currentBook.bookName + " | "
-                    + "author:" + currentBook.author + " | "
-                    + "published:" + currentBook.yearPublished);
-        }
-    }
 }
