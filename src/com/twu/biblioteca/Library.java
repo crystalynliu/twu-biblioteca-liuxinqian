@@ -6,14 +6,24 @@ import java.io.InputStreamReader;
 import java.util.List;
 
 public class Library {
-    private List<Book> bookList = Book.initialBookList();
-    private List<Menu> menuList = Menu.InitialMenuList();
+    private List<Book> bookList;
+    private List<Menu> menuList;
 
     private InputStreamReader input = new InputStreamReader(System.in);
     private BufferedReader bufferedReader = new BufferedReader(input);
 
     public Library(BufferedReader bufferedReader){
         this.bufferedReader = bufferedReader;
+        this.bookList = Book.initialBookList();
+        this.menuList = Menu.InitialMenuList();
+    }
+
+    public List<Book> getBookList(){
+        return bookList;
+    }
+
+    public void setBookList(List<Book> bookList){
+        this.bookList = bookList;
     }
 
 

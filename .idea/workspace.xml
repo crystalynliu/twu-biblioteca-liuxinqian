@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="076c0e44-2099-4e98-b873-e4a491bbe15f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/Library.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/Library.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/handleBookTest.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/handleBookTest.java" />
     </list>
     <ignored path="biblioteca.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -73,11 +74,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="handleBookTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="handleBookTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/handleBookTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="110" column="96" selection-start-line="110" selection-start-column="69" selection-end-line="110" selection-end-column="96" />
+            <state relative-caret-position="317">
+              <caret line="122" column="5" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#734#740#0" expanded="true" />
@@ -89,15 +90,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Library.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Library.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/Library.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="15" column="45" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
+            <state relative-caret-position="493">
+              <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#479#480#0" expanded="true" />
-                <element signature="e#531#532#0" expanded="true" />
+                <element signature="e#615#616#0" expanded="true" />
+                <element signature="e#646#647#0" expanded="true" />
+                <element signature="e#697#698#0" expanded="true" />
+                <element signature="e#737#738#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -131,8 +134,8 @@
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/Libery.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/Book.java" />
-        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/handleBookTest.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/Library.java" />
+        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/handleBookTest.java" />
       </list>
     </option>
   </component>
@@ -794,14 +797,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1470582462055</updated>
-      <workItem from="1470582463386" duration="33451000" />
+      <workItem from="1470582463386" duration="34051000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="handleBookTest_(1) - 2016.08.08 at 23h 00m 10s.xml">
-      <configuration name="handleBookTest (1)" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="handleBookTest_(1) - 2016.08.08 at 23h 02m 53s.xml">
       <configuration name="handleBookTest (1)" configurationId="JUnit" />
     </history-entry>
@@ -829,9 +829,12 @@
     <history-entry file="handleBookTest_(1) - 2016.08.08 at 23h 57m 01s.xml">
       <configuration name="handleBookTest (1)" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="handleBookTest_(1) - 2016.08.09 at 00h 07m 58s.xml">
+      <configuration name="handleBookTest (1)" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33451000" />
+    <option name="totallyTimeSpent" value="34051000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="28" width="1440" height="814" extended-state="0" />
@@ -976,28 +979,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/Library.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#615#616#0" expanded="true" />
+            <element signature="e#646#647#0" expanded="true" />
+            <element signature="e#697#698#0" expanded="true" />
+            <element signature="e#737#738#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/handleBookTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="110" column="96" selection-start-line="110" selection-start-column="69" selection-end-line="110" selection-end-column="96" />
+        <state relative-caret-position="317">
+          <caret line="122" column="5" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#734#740#0" expanded="true" />
             <element signature="e#788#794#0" expanded="true" />
             <element signature="e#1308#1309#0" expanded="true" />
             <element signature="e#1343#1344#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/Library.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="45" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#479#480#0" expanded="true" />
-            <element signature="e#531#532#0" expanded="true" />
           </folding>
         </state>
       </provider>
