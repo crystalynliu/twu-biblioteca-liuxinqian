@@ -123,4 +123,29 @@ public class handleBookTest {
         assertThat(outContent.toString(), is(expectation));
     }
 
+    @Test
+    public void select_option_when_input_menu_index_three_that_book_available() throws IOException {
+        when(mockBufferedReader.readLine()).thenReturn("2");
+        library.getBookList().get(1).setIsCheckOut(false);
+        library.selectOptionFromIndex(3);
+        String expectation = "please input the number about book:"+ "Thank you for returning the book.\n";
+        assertThat(outContent.toString(), is(expectation));
+    }
+
+    @Test
+    public void select_option_when_input_menu_index_three_that_book_isExist() throws IOException {
+        when(mockBufferedReader.readLine()).thenReturn("6");
+        library.selectOptionFromIndex(3);
+        String expectation = "please input the number about book:"+ "That is not a valid book to return.\n";
+        assertThat(outContent.toString(), is(expectation));
+    }
+
+    @Test
+    public void select_option_when_input_menu_index_three_that_book_isAvailable() throws IOException {
+        when(mockBufferedReader.readLine()).thenReturn("1");
+        library.selectOptionFromIndex(3);
+        String expectation = "please input the number about book:"+ "That is not a valid book to return.\n";
+        assertThat(outContent.toString(), is(expectation));
+    }
+
 }
