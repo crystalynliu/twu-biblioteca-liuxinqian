@@ -49,9 +49,10 @@ public class handleBookTest {
     }
 
     @Test
-    public void print_book_list_when_welcome_message_appear() {
+    public void print_book_list_that_book_is_available() {
+        books.get(0).setCheckOut(false);
         library.printBookList(books);
-        String expectation = "1 | name:Harry Potter and the Sorcerer's Stone | author:Rowling | published:1997\n"
+        String expectation = "======= Book List =======\n"
                 + "2 | name:Charlie and the Chocolate Factory | author:Dahl | published:1964\n";
         assertEquals(expectation, outContent.toString());
     }
