@@ -54,11 +54,18 @@ public class Library {
         return Integer.parseInt(choiceIndex);
     }
 
-    public void selectOptionFromIndex(int index) {
+    public void selectOptionFromIndex(int index) throws IOException {
         switch (index){
             case 1: {
                 System.out.println("======= Book List =======");
                 printBookList(bookList);
+                break;
+            }
+            case 2: {
+                System.out.print("please input the number about book:");
+                int bookId = getChoiceIndex();
+                String message = "Thank you! Enjoy the book!";
+                System.out.println(message);
                 break;
             }
         }

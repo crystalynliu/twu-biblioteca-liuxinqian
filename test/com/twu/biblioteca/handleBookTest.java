@@ -91,7 +91,7 @@ public class handleBookTest {
     }
 
     @Test
-    public void select_option_when_input_menu_index_one(){
+    public void select_option_when_input_menu_index_one() throws IOException {
         library.selectOptionFromIndex(1);
         assertThat(outContent.toString(), containsString("Book List"));
     }
@@ -100,7 +100,7 @@ public class handleBookTest {
     public void select_option_when_input_menu_index_two_that_book_available() throws IOException {
         when(mockBufferedReader.readLine()).thenReturn("2");
         library.selectOptionFromIndex(2);
-        String expectation = "please input the number about book:"+ "Thank you! Enjoy the book!";
+        String expectation = "please input the number about book:"+ "Thank you! Enjoy the book!\n";
         assertThat(outContent.toString(), is(expectation));
     }
 
