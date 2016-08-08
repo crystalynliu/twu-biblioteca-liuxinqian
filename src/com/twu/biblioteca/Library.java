@@ -54,6 +54,13 @@ public class Library {
         return Integer.parseInt(choiceIndex);
     }
 
-    public void selectOptionFromIndex(int i) {
+    public void selectOptionFromIndex(int index) {
+        switch (index){
+            case 1: {
+                System.out.println("======= Book List =======");
+                printBookList(bookList);
+                break;
+            }
+        }
     }
 }
