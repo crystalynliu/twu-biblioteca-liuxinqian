@@ -53,4 +53,7 @@ public class Library {
         String choiceIndex = bufferedReader.readLine();
         return Integer.parseInt(choiceIndex);
     }
+
+    public void selectOptionFromIndex(int i) {
+    }
 }

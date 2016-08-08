@@ -62,7 +62,7 @@ public class Book {
         List<Book> bookList = new ArrayList<Book>();
         bookList.add(new Book(1,"Harry Potter and the Sorcerer's Stone","Rowling","1997"));
         bookList.add(new Book(2,"Charlie and the Chocolate Factory","Dahl","1964"));
-        bookList.add(new Book(3,"The Great Gatsby ","Fitzgerald","1925"));
+        bookList.add(new Book(3,"The Great Gatsby","Fitzgerald","1925"));
         bookList.add(new Book(4,"The Old Man and the Sea","Hemingway","1952"));
         bookList.add(new Book(5,"The Catcher in the Rye","Salinger","1951"));
 

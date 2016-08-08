@@ -8,6 +8,8 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.hamcrest.CoreMatchers.containsString;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -85,6 +87,12 @@ public class handleBookTest {
                 + "3 -- RETURN BOOK\n" + "4 -- QUIT\n"
                 + "Select on Option about Menu:"+ "You have Quit the Library!\n";
         assertEquals(expectation, outContent.toString());
+    }
+
+    @Test
+    public void select_option_when_input_menu_index_one(){
+        library.selectOptionFromIndex(1);
+        assertThat(outContent.toString(), containsString("Book List"));
     }
 
 
