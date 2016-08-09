@@ -26,6 +26,12 @@ public class Library {
         this.bookList = bookList;
     }
 
+    public void start() throws IOException {
+        printWelcomeMessage();
+        printBookList();
+        choiceMenu();
+    }
+
 
     public static void printWelcomeMessage() {
         System.out.println("Welcome to The Bangalore Public Library, Enjoy you journey!");
@@ -33,21 +39,19 @@ public class Library {
 
     public void printBookList() {
         System.out.println("======= Book List =======");
-        for (int i = 0; i < bookList.size(); i++) {
-            Book currentBook = bookList.get(i);
-            if (currentBook.getIsCheckout()) {
-                System.out.println(currentBook.getBookId() + " | "
-                        + "name:" + currentBook.getBookName() + " | "
-                        + "author:" + currentBook.getAuthor() + " | "
-                        + "published:" + currentBook.getYearPublished());
+        for (Book book : bookList) {
+            if (book.getIsCheckout()) {
+                System.out.println(book.getBookId() + " | "
+                        + "name:" + book.getBookName() + " | "
+                        + "author:" + book.getAuthor() + " | "
+                        + "published:" + book.getYearPublished());
             }
         }
     }
 
     public void showMenuList() {
         System.out.println("======= Menu List =======");
-        for (int i = 0; i < menuList.size(); i++) {
-            Menu menu = menuList.get(i);
+        for (Menu menu : menuList) {
             System.out.println(menu.getMenuId() + " -- " + menu.getMenuName());
         }
         System.out.print("Select on Option about Menu:");
@@ -58,13 +62,9 @@ public class Library {
         do {
             showMenuList();
             choiceIndex = getChoiceIndex();
+            selectOptionFromIndex(choiceIndex);
         } while (choiceIndex != 4);
         System.out.println("You have Quit the Library!");
-    }
-
-    public int getChoiceIndex() throws IOException {
-        String choiceIndex = bufferedReader.readLine();
-        return Integer.parseInt(choiceIndex);
     }
 
     public void selectOptionFromIndex(int index) throws IOException {
@@ -111,5 +111,10 @@ public class Library {
             }
         }
         return false;
+    }
+
+    public int getChoiceIndex() throws IOException {
+        String choiceIndex = bufferedReader.readLine();
+        return Integer.parseInt(choiceIndex);
     }
 }
