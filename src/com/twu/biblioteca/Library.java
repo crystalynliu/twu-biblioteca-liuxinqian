@@ -52,8 +52,9 @@ public class Library {
     public void showMenuList() {
         System.out.println("======= Menu List =======");
         for (Menu menu : menuList) {
-            System.out.println(menu.getMenuId() + " -- " + menu.getMenuName());
+            System.out.println("== "+ menu.getMenuId() + " -- " + menu.getMenuName());
         }
+        System.out.println("=========================");
         System.out.print("Select on Option about Menu:");
     }
 
@@ -64,7 +65,7 @@ public class Library {
             choiceIndex = getChoiceIndex();
             selectOptionFromIndex(choiceIndex);
         } while (choiceIndex != 4);
-        System.out.println("You have Quit the Library!");
+        System.out.println("MESSAGE: You have Quit the Library!");
     }
 
     public void selectOptionFromIndex(int index) throws IOException {
@@ -91,13 +92,13 @@ public class Library {
     }
 
     private void getBookStatue(boolean isCheckout) throws IOException {
-        System.out.print("please input the number about book:");
+        System.out.print("Please Input the (Number) of Book that You Want to Checkout(Return):");
         int bookId = getChoiceIndex();
         String message;
         if (isCheckout) {
-            message = checkBooksById(bookId, isCheckout) ? "Thank you! Enjoy the book!" : "That book is not available.";
+            message = checkBooksById(bookId, isCheckout) ? "MESSAGE: Thank you! Enjoy the book!" : "ERROR: That book is not available.";
         } else {
-            message = checkBooksById(bookId, isCheckout) ? "Thank you for returning the book." : "That is not a valid book to return.";
+            message = checkBooksById(bookId, isCheckout) ? "MESSAGE: Thank you for returning the book." : "ERROR: That is not a valid book to return.";
         }
         System.out.println(message);
     }
