@@ -12,8 +12,8 @@ import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.mockito.Matchers.anyInt;
+import static org.mockito.Mockito.*;
 
 public class handleBookTest {
 
@@ -72,7 +72,9 @@ public class handleBookTest {
     public void circle_Print_Menu_when_choice_is_not_quit() throws IOException {
 
         when(mockBufferedReader.readLine()).thenReturn("1").thenReturn("2").thenReturn("3").thenReturn("4");
-        library.choiceMenu();
+        Library mockLibrary = spy(new Library(mockBufferedReader));
+        doNothing().when(mockLibrary).selectOptionFromIndex(anyInt());
+        mockLibrary.choiceMenu();
         String expectation = "======= Menu List =======\n"
                 + "1 -- LIST BOOKS\n" + "2 -- CHOCK OUT BOOK\n"
                 + "3 -- RETURN BOOK\n" + "4 -- QUIT\n"
