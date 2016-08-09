@@ -45,7 +45,7 @@ public class handleBookTest {
     public void print_correct_welcome_message_when_start() {
         String expectation = "Welcome to The Bangalore Public Library, Enjoy you journey!\n";
         Library.printWelcomeMessage();
-        assertEquals(expectation, outContent.toString());
+        assertThat(outContent.toString(), is(expectation));
 
     }
 
@@ -55,17 +55,13 @@ public class handleBookTest {
         library.printBookList();
         String expectation = "======= Book List =======\n"
                 + "2 | name:Charlie and the Chocolate Factory | author:Dahl | published:1964\n";
-        assertEquals(expectation, outContent.toString());
+        assertThat(outContent.toString(), is(expectation));
     }
 
     @Test
     public void print_Menu_list_when_choice_option() {
         library.showMenuList();
-        String expectation = "======= Menu List =======\n"
-                + "1 -- LIST BOOKS\n" + "2 -- CHOCK OUT BOOK\n"
-                + "3 -- RETURN BOOK\n" + "4 -- QUIT\n"
-                + "Select on Option about Menu:";
-        assertEquals(expectation, outContent.toString());
+        assertThat(outContent.toString(), containsString("Menu List"));
     }
 
     @Test
@@ -75,23 +71,10 @@ public class handleBookTest {
         Library mockLibrary = spy(new Library(mockBufferedReader));
         doNothing().when(mockLibrary).selectOptionFromIndex(anyInt());
         mockLibrary.choiceMenu();
-        String expectation = "======= Menu List =======\n"
-                + "1 -- LIST BOOKS\n" + "2 -- CHOCK OUT BOOK\n"
-                + "3 -- RETURN BOOK\n" + "4 -- QUIT\n"
-                + "Select on Option about Menu:"
-                + "======= Menu List =======\n"
-                + "1 -- LIST BOOKS\n" + "2 -- CHOCK OUT BOOK\n"
-                + "3 -- RETURN BOOK\n" + "4 -- QUIT\n"
-                + "Select on Option about Menu:"
-                + "======= Menu List =======\n"
-                + "1 -- LIST BOOKS\n" + "2 -- CHOCK OUT BOOK\n"
-                + "3 -- RETURN BOOK\n" + "4 -- QUIT\n"
-                + "Select on Option about Menu:"
-                + "======= Menu List =======\n"
-                + "1 -- LIST BOOKS\n" + "2 -- CHOCK OUT BOOK\n"
-                + "3 -- RETURN BOOK\n" + "4 -- QUIT\n"
-                + "Select on Option about Menu:"+ "You have Quit the Library!\n";
-        assertEquals(expectation, outContent.toString());
+        verify(mockLibrary, times(4)).showMenuList();
+        verify(mockLibrary, times(4)).getChoiceIndex();
+        verify(mockLibrary, times(4)).selectOptionFromIndex(anyInt());
+        assertThat(outContent.toString(), containsString("You have Quit the Library!"));
     }
 
     @Test
@@ -104,19 +87,17 @@ public class handleBookTest {
     public void select_option_when_input_menu_index_two_that_book_available() throws IOException {
         when(mockBufferedReader.readLine()).thenReturn("2");
         library.selectOptionFromIndex(2);
-        String expectation = "please input the number about book:"+ "Thank you! Enjoy the book!\n";
         assertThat(library.getBookList().get(1).getIsCheckout(), is(false));
-        assertThat(outContent.toString(), is(expectation));
+        assertThat(outContent.toString(), containsString("Thank you! Enjoy the book!"));
     }
 
     @Test
     public void select_option_when_input_menu_index_two_that_book_isExist() throws IOException {
         when(mockBufferedReader.readLine()).thenReturn("6");
         library.selectOptionFromIndex(2);
-        String expectation = "please input the number about book:"+ "That book is not available.\n";
         assertThat(library.getBookList().get(0).getIsCheckout(), is(true));
         assertThat(library.getBookList().get(1).getIsCheckout(), is(true));
-        assertThat(outContent.toString(), is(expectation));
+        assertThat(outContent.toString(), containsString("That book is not available."));
     }
 
     @Test
@@ -124,9 +105,8 @@ public class handleBookTest {
         when(mockBufferedReader.readLine()).thenReturn("1");
         library.getBookList().get(0).setIsCheckOut(false);
         library.selectOptionFromIndex(2);
-        String expectation = "please input the number about book:"+ "That book is not available.\n";
         assertThat(library.getBookList().get(0).getIsCheckout(), is(false));
-        assertThat(outContent.toString(), is(expectation));
+        assertThat(outContent.toString(), containsString("That book is not available."));
     }
 
     @Test
@@ -134,35 +114,32 @@ public class handleBookTest {
         when(mockBufferedReader.readLine()).thenReturn("2");
         library.getBookList().get(1).setIsCheckOut(false);
         library.selectOptionFromIndex(3);
-        String expectation = "please input the number about book:"+ "Thank you for returning the book.\n";
         assertThat(library.getBookList().get(1).getIsCheckout(), is(true));
-        assertThat(outContent.toString(), is(expectation));
+        assertThat(outContent.toString(), containsString("Thank you for returning the book."));
     }
 
     @Test
     public void select_option_when_input_menu_index_three_that_book_isExist() throws IOException {
         when(mockBufferedReader.readLine()).thenReturn("6");
         library.selectOptionFromIndex(3);
-        String expectation = "please input the number about book:"+ "That is not a valid book to return.\n";
         assertThat(library.getBookList().get(0).getIsCheckout(), is(true));
         assertThat(library.getBookList().get(1).getIsCheckout(), is(true));
-        assertThat(outContent.toString(), is(expectation));
+        assertThat(outContent.toString(), containsString("That is not a valid book to return."));
     }
 
     @Test
     public void select_option_when_input_menu_index_three_that_book_isAvailable() throws IOException {
         when(mockBufferedReader.readLine()).thenReturn("1");
         library.selectOptionFromIndex(3);
-        String expectation = "please input the number about book:"+ "That is not a valid book to return.\n";
         assertThat(library.getBookList().get(0).getIsCheckout(), is(true));
         assertThat(library.getBookList().get(1).getIsCheckout(), is(true));
-        assertThat(outContent.toString(), is(expectation));
+        assertThat(outContent.toString(), containsString("That is not a valid book to return."));
     }
 
     @Test
     public void select_option_when_input_menu_index_invalid() throws IOException {
         library.selectOptionFromIndex(5);
-        assertThat(outContent.toString(), is("Error: Select a valid option!\n"));
+        assertThat(outContent.toString(), containsString("Select a valid option!"));
     }
 
 }
