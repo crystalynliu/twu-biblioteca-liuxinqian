@@ -81,6 +81,12 @@ public class Library {
                 getBookStatue(false);
                 break;
             }
+            case 4: {
+                break;
+            }
+            default:{
+                System.out.println("Error: "+ Menu.invalidMenuMessage);
+            }
         }
     }
 
@@ -99,7 +105,9 @@ public class Library {
     private boolean checkBooksById(int bookId, boolean isCheckout) {
         for (Book book : bookList) {
             if (book.getBookId() == bookId) {
-                return isCheckout ? book.getIsCheckout() : !book.getIsCheckout();
+                boolean isSuccess = isCheckout ? book.getIsCheckout() : !book.getIsCheckout();
+                book.setIsCheckOut(!isCheckout);
+                return isSuccess;
             }
         }
         return false;

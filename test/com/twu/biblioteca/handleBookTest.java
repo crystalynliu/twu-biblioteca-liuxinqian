@@ -103,6 +103,7 @@ public class handleBookTest {
         when(mockBufferedReader.readLine()).thenReturn("2");
         library.selectOptionFromIndex(2);
         String expectation = "please input the number about book:"+ "Thank you! Enjoy the book!\n";
+        assertThat(library.getBookList().get(1).getIsCheckout(), is(false));
         assertThat(outContent.toString(), is(expectation));
     }
 
@@ -111,6 +112,8 @@ public class handleBookTest {
         when(mockBufferedReader.readLine()).thenReturn("6");
         library.selectOptionFromIndex(2);
         String expectation = "please input the number about book:"+ "That book is not available.\n";
+        assertThat(library.getBookList().get(0).getIsCheckout(), is(true));
+        assertThat(library.getBookList().get(1).getIsCheckout(), is(true));
         assertThat(outContent.toString(), is(expectation));
     }
 
@@ -120,6 +123,7 @@ public class handleBookTest {
         library.getBookList().get(0).setIsCheckOut(false);
         library.selectOptionFromIndex(2);
         String expectation = "please input the number about book:"+ "That book is not available.\n";
+        assertThat(library.getBookList().get(0).getIsCheckout(), is(false));
         assertThat(outContent.toString(), is(expectation));
     }
 
@@ -129,6 +133,7 @@ public class handleBookTest {
         library.getBookList().get(1).setIsCheckOut(false);
         library.selectOptionFromIndex(3);
         String expectation = "please input the number about book:"+ "Thank you for returning the book.\n";
+        assertThat(library.getBookList().get(1).getIsCheckout(), is(true));
         assertThat(outContent.toString(), is(expectation));
     }
 
@@ -137,6 +142,8 @@ public class handleBookTest {
         when(mockBufferedReader.readLine()).thenReturn("6");
         library.selectOptionFromIndex(3);
         String expectation = "please input the number about book:"+ "That is not a valid book to return.\n";
+        assertThat(library.getBookList().get(0).getIsCheckout(), is(true));
+        assertThat(library.getBookList().get(1).getIsCheckout(), is(true));
         assertThat(outContent.toString(), is(expectation));
     }
 
@@ -145,6 +152,8 @@ public class handleBookTest {
         when(mockBufferedReader.readLine()).thenReturn("1");
         library.selectOptionFromIndex(3);
         String expectation = "please input the number about book:"+ "That is not a valid book to return.\n";
+        assertThat(library.getBookList().get(0).getIsCheckout(), is(true));
+        assertThat(library.getBookList().get(1).getIsCheckout(), is(true));
         assertThat(outContent.toString(), is(expectation));
     }
 
